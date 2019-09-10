@@ -61,8 +61,8 @@ def get_band_members(artist)
     end 
 end
 
-get_band_members('mf doom')
-get_genre('mf doom')
+# get_band_members('mf doom')
+# get_genre('mf doom')
 
 
 puts "HELLO WORLD"
@@ -81,19 +81,20 @@ def login
     end
 end
 
-#user = login
+# user = login
 
-def hire_act
-    act = gets.chomp
+def hire_act(arg)
+    # act = gets.chomp
+    act = arg
     act_genre = get_genre(act)
-    new_artist = Artist.create(name: act.capitalize, genre: act_genre, user_id: user.id)
-    Genre.create(title: act_genre, user_id: user.id)
+    new_artist = Artist.create(name: act.capitalize, genre: act_genre, user_id: $user.id)
+    Genre.create(name: act_genre, user_id: $user.id)
     add_band_members(new_artist)
     new_artist
 end
 
 def add_band_members(artist)
-    band_members = get_band_members(act)
+    band_members = get_band_members(artist.name)
     band_members.each do |member|
         BandMember.create(name: member, artist_id: artist.id)
     end
