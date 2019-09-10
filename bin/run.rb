@@ -1,4 +1,3 @@
 require_relative '../config/environment'
-puts "Welcome to EXTREME BAND MANAGEMENT!"
-puts "Please enter a name:"
-name = gets.chomp
+require 'pry'
+p RestClient.get "https://api.discogs.com/database/search?q=Nirvana&key=RQiVIFhlSQUaqhURPhaW&secret=VHJtTwzPjtlEZUmGvUvdoAHlLaBzsqQv"
