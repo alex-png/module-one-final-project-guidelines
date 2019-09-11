@@ -32,9 +32,7 @@ class EasyQuestion
         v1 = User.current.venues.all.sample
         
         puts "Hey, it's #{v1.name}. We mostly play #{v1.genres.map do |genre| genre.name end.join(" and ") }. For future reference, do any of your artists play that?"
-        artist = treat_input_as_artist
-        a = check_artist_genre_is_right_for_venue(artist, v1)
-    
+        #User.all.last.genres.include?(Venue.all.last.genres[0])
     
         if a == 1 
             puts "You don't actually manage them, do you? 🤬"

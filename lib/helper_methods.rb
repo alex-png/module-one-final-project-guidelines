@@ -213,4 +213,5 @@ end
 def welcome_message
     puts "Welcome to EXTREME BAND MANAGER, #{User.current.name}! Your task is to get rich by managing as many bands as you possibly can...or die trying!"
 end
-
+#####################
+# chek_if_user_has_genres
